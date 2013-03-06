@@ -6,6 +6,8 @@ class Libgsasl < Formula
   mirror 'http://ftp.gnu.org/gnu/gsasl/libgsasl-1.8.0.tar.gz'
   sha1 '08fd5dfdd3d88154cf06cb0759a732790c47b4f7'
 
+  depends_on 'libntlm'
+
   def install
     system "./configure", "--disable-dependency-tracking",
                           "--prefix=#{prefix}"
