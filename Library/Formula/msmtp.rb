@@ -8,11 +8,13 @@ class Msmtp < Formula
   option 'with-macosx-keyring', "Support Mac OS X Keyring"
 
   depends_on 'pkg-config' => :build
+  depends_on 'libgsasl'
 
   def install
     args = %W[
       --disable-dependency-tracking
       --prefix=#{prefix}
+      --with-libgsasl
     ]
     args << "--with-macosx-keyring" if build.include? 'with-macosx-keyring'
 
